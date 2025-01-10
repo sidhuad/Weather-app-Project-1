@@ -1,3 +1,4 @@
+
 const weatherForm = document.querySelector(`form`);
 const cityInput = document.querySelector(`#locationName`);
 const cards = document.querySelector(`.card`);
@@ -22,8 +23,10 @@ function displayWeatherInfo(data){
 }
 function getWeatherEmoji(weatherId){
 
+
 }
 function displayError(Message){ 
     const errorDisplay = document.createElement ('p');
     errorDisplay.textContent = Message;
+
 }
