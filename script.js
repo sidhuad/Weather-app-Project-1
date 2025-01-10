@@ -1,5 +1,5 @@
 const weatherFrom = document.querySelector('form');
-cpmst cityInput = document.querySelector('#locationName');
+const cityInput = document.querySelector('#locationName');
 const cards = document.querySelector('.card');
 const apiKey = "36684b12ddb5a86da4560c99ced6468c";
 
