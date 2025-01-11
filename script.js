@@ -72,11 +72,7 @@ function displayWeatherInfo(data){
   
     const mainSection = document.querySelector('section');
 
-<<<<<<< Updated upstream
-    // making sure inner html for section is empty
-=======
     // making suree
->>>>>>> Stashed changes
     mainSection.innerHTML = "";
 
     const days = ['Sunday','Monday','Tuesday','Wednesday','Thursday','Friday','Saturday'];
