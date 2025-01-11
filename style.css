@@ -3,7 +3,6 @@ body, h1, form, section {
     padding: 0;
 }
 
-
 .header {
     border-radius: 8px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
@@ -19,7 +18,8 @@ body, h1, form, section {
     font-size: 3rem;
     font-weight: bold;
     text-align: center;
-    color:rgb(0, 0, 0);
+    color:rgb(236, 233, 233);
+    font-family: 'dune rise', sans-serif;
 }
 
 .main {
@@ -34,8 +34,9 @@ body {
 
 
 form {
-    margin-top: 2rem;
     text-align: center;
+    max-width: 500px;
+    margin: 0 auto;
 }
 
 .form-label {
@@ -67,10 +68,19 @@ section {
     border-radius: 8px;
 }.card
 {
-    height: 300px ;
+    /* height: 300px ; */
     text-align: center;
     background: linear-gradient( rgba(73, 174, 241, 0.70),rgb(223, 147, 47));
-    font-style: bold;
     border: none;
     cursor: pointer;
 }
+.card *
+{
+    line-height: 60px ;
+}
+/* .errorDisplay
+{
+   font-size: 2.5rem;
+   font-weight: bold;
+   color: red;
+} */
