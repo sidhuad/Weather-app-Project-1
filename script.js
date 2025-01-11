@@ -1,30 +1,11 @@
-
-// const weatherForm = document.querySelector('form');
-// const cityInput = document.querySelector('#locationName');
-// const card = document.querySelector('.card');
-// // const apiKey = "36684b12ddb5a86da4560c99ced6468c";
-
-
-// weatherForm.addEventListener('submit',event => {
-//     event.preventDefault();
+const weatherForm = document.querySelector('form');
+const cityInput = document.querySelector('#locationName');
+const card = document.querySelector('.card');
+// const apiKey = "36684b12ddb5a86da4560c99ced6468c";
 
 
-const weatherForm = document.querySelector(`form`);
-const cityInput = document.querySelector(`#locationName`);
-const cards = document.querySelector(`.card`);
-const apiKey = "36684b12ddb5a86da4560c99ced6468c";
-
-
-weatherForm.addEventListener('submit',Event =>{
+weatherForm.addEventListener('submit',event => {
     event.preventDefault();
-    const city = cityInput.value;
-    if (city){
-
-    }
-    else {
-        displayError('Please Enter a City')};
-});
-
 
     const city = cityInput.value.trim();
     if (city) {
@@ -172,18 +153,10 @@ function displayWeatherInfo(data){
 
 
 
-
-// function getWeatherEmoji(weatherId){
-
-
-
-}
-function displayError(Message){ 
+function displayError(message){
     const errorDisplay = document.createElement ('p');
-//     errorDisplay.textContent = message;
-//     errorDisplay.classList.add("errorDisplay");
-//     errorDisplay.textContent = Message;
-
+    errorDisplay.textContent = message;
+    errorDisplay.classList.add("errorDisplay");
 
     card.innerHTML = "";
     card.append(errorDisplay);
