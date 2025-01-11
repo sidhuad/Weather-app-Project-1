@@ -6,9 +6,9 @@ body, h1, form, section {
 
 .header {
     border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    color:#f4f4f9;
-    background-color: #ffffff !important;
+    /* box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); */
+    /* color:#f4f4f9; */
+    background-color: #ffffff ;
 }
 
 /* .header.container.my-5.p-5.bg-dark.text-white {
@@ -19,7 +19,7 @@ body, h1, form, section {
     font-size: 3rem;
     font-weight: bold;
     text-align: center;
-    color:rgb(0, 0, 0);
+    color:rgb(236, 233, 233);
 }
 
 .main {
@@ -67,10 +67,19 @@ section {
     border-radius: 8px;
 }.card
 {
-    height: 300px ;
+    /* height: 300px ; */
     text-align: center;
     background: linear-gradient( rgba(73, 174, 241, 0.70),rgb(223, 147, 47));
-    font-style: bold;
     border: none;
     cursor: pointer;
+}
+.card *
+{
+    line-height: 60px ;
+}
+.errorDisplay
+{
+   font-size: 2.5rem;
+   font-weight: bold;
+   color: red;
 }
