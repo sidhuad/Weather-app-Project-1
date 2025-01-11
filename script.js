@@ -69,32 +69,25 @@ function displayWeatherInfo(data){
     const windGust = data.daily.wind_gusts_10m_max;
     const weatherCode = data.daily.weather_code;
     const weatherDay = data.daily.time;
+  
+    const mainSection = document.querySelector('section');
 
-    // const windDirection = data.daily.wind_direction_10m_dominant;
-
-    // console.log(maxTemp); // cel
-    // console.log(minTemp);
-    // console.log(windSpeed); // kmph at 10 meter from ground
-    // console.log(windGust); // kmph at 10 meter from ground
-    // console.log(windDirection); // degress
-    // console.log(weatherCode);
-    
-    console.log(data.daily.time.length);
-    // console.log(maxTemp[0]);
-    // console.log(data.daily.length);
-    
+    // making sure inner html for section is empty
+    mainSection.innerHTML = "";
 
     const days = ['Sunday','Monday','Tuesday','Wednesday','Thursday','Friday','Saturday'];
 
+
     for (let i = 0; i < weatherDay.length; i++) {
         
-        const mainSection = document.querySelector('section');
         const cardElement = document.createElement('card');
         const h1Day = document.createElement('h1');
         const h4Temp = document.createElement('h4');
         const h4WeatherCode = document.createElement('h4');
         const h4WindSpeed = document.createElement('h4');
         const h4WindGust = document.createElement('h4');
+
+
 
         h1Day.innerHTML = weatherDay[i];
         cardElement.append(h1Day);
@@ -153,15 +146,4 @@ function displayWeatherInfo(data){
         mainSection.append(cardElement);
 
     }  
-}
-
-
-
-function displayError(message){
-    const errorDisplay = document.createElement ('p');
-    errorDisplay.textContent = message;
-    errorDisplay.classList.add("errorDisplay");
-
-    card.innerHTML = "";
-    card.append(errorDisplay);
 }
