@@ -1,21 +1,10 @@
-
-// const weatherForm = document.querySelector('form');
-// const cityInput = document.querySelector('#locationName');
-// const card = document.querySelector('.card');
-// // const apiKey = "36684b12ddb5a86da4560c99ced6468c";
-
-
-// weatherForm.addEventListener('submit',event => {
-//     event.preventDefault();
-
-
 const weatherForm = document.querySelector(`form`);
 const cityInput = document.querySelector(`#locationName`);
 const cards = document.querySelector(`.card`);
 const apiKey = "36684b12ddb5a86da4560c99ced6468c";
 
 
-weatherForm.addEventListener('submit',Event =>{
+weatherForm.addEventListener('submit',event =>{
     event.preventDefault();
     const city = cityInput.value;
     if (city){
@@ -54,7 +43,7 @@ weatherForm.addEventListener('submit',Event =>{
         alert("Please Enter a City and State");
     }
 
-});
+
 
 
 
@@ -82,21 +71,21 @@ function getWeatherData(coordinates){
 
 function displayWeatherInfo(data){
 
-    const maxTemp = data.daily.temperature_2m_max;
-    const minTemp = data.daily.temperature_2m_min;
-    const windSpeed = data.daily.wind_speed_10m_max;
-    const windGust = data.daily.wind_gusts_10m_max;
-    const weatherCode = data.daily.weather_code;
-    const weatherDay = data.daily.time;
+//     const maxTemp = data.daily.temperature_2m_max;
+//     const minTemp = data.daily.temperature_2m_min;
+//     const windSpeed = data.daily.wind_speed_10m_max;
+//     const windGust = data.daily.wind_gusts_10m_max;
+//     const weatherCode = data.daily.weather_code;
+//     const weatherDay = data.daily.time;
 
-    // const windDirection = data.daily.wind_direction_10m_dominant;
+    const windDirection = data.daily.wind_direction_10m_dominant;
 
-    // console.log(maxTemp); // cel
-    // console.log(minTemp);
-    // console.log(windSpeed); // kmph at 10 meter from ground
-    // console.log(windGust); // kmph at 10 meter from ground
-    // console.log(windDirection); // degress
-    // console.log(weatherCode);
+    console.log(maxTemp); // cel
+    console.log(minTemp);
+    console.log(windSpeed); // kmph at 10 meter from ground
+    console.log(windGust); // kmph at 10 meter from ground
+    console.log(windDirection); // degress
+    console.log(weatherCode);
     
     console.log(data.daily);
     
@@ -177,7 +166,6 @@ function displayWeatherInfo(data){
 
 
 
-}
 function displayError(Message){ 
     const errorDisplay = document.createElement ('p');
 //     errorDisplay.textContent = message;
