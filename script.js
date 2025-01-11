@@ -142,7 +142,7 @@ function displayWeatherInfo(data){
         cardElement.append(h4WeatherCode);
         cardElement.append(h4WindSpeed);
         cardElement.append(h4WindGust);
-        cardElement.setAttribute("class",`card col-sm-12 col-md-3 col-lg-3 col-xl-4 mx-1 my-1`);
+        cardElement.setAttribute("class",`card col-12 col-sm-12 col-md-9 col-lg-3 col-xl-3 col-xxl-3 p-2 mx-1 my-1`);
         mainSection.append(cardElement);
 
     }  
