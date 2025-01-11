@@ -24,7 +24,7 @@ weatherForm.addEventListener('submit',event => {
         }) 
         .then(data => {
             // console.log(data);
-            getWeatherData(data); // sending data into the function
+            getWeatherData(data); // sending lat and long coord data into the function for fetching weather data
         })
         .catch(error =>{
             console.error(error);  // Log errors if any
@@ -32,7 +32,7 @@ weatherForm.addEventListener('submit',event => {
     }
     else
     {
-        alert("Please Enter a City and State");
+        alert("Please Enter a City.");
     }
 
 });
@@ -79,11 +79,14 @@ function displayWeatherInfo(data){
     // console.log(windDirection); // degress
     // console.log(weatherCode);
     
-    console.log(data.daily);
+    console.log(data.daily.time.length);
+    // console.log(maxTemp[0]);
+    // console.log(data.daily.length);
     
+
     const days = ['Sunday','Monday','Tuesday','Wednesday','Thursday','Friday','Saturday'];
 
-    for (let i = 0; i < data.daily.length; i++) {
+    for (let i = 0; i < weatherDay.length; i++) {
         
         const mainSection = document.querySelector('section');
         const cardElement = document.createElement('card');
@@ -94,7 +97,10 @@ function displayWeatherInfo(data){
         const h4WindGust = document.createElement('h4');
 
         h1Day.innerHTML = weatherDay[i];
-        h4Temp.innerHTML = `Max / Min Temperature: ${maxTemp[i]} / ${minTemp[i]} &#x2103 `;
+        cardElement.append(h1Day);
+
+        h4Temp.innerHTML = `Max / Min <br> ${maxTemp[i]} / ${minTemp[i]} &#x2103 `;
+        cardElement.append(h4Temp);
 
 
         if (weatherCode[i] > 0 && weatherCode[i] < 4) {
@@ -137,15 +143,13 @@ function displayWeatherInfo(data){
             h4WeatherCode.innerHTML = "Sunny / Clear Sky";
         }
        
-        h4WindSpeed.innerHTML = `Wind Speed : ${windSpeed[i]} Km/H`;
-        h4WindGust.innerHTML = `Wind Gust : ${windGust[i]} Km/H`;
+        h4WindSpeed.innerHTML = `Wind Speed <br> ${windSpeed[i]} Km/H`;
+        h4WindGust.innerHTML = `Wind Gust <br> ${windGust[i]} Km/H`;
 
-        cardElement.append(h1Day);
-        cardElement.append(h4Temp);
         cardElement.append(h4WeatherCode);
         cardElement.append(h4WindSpeed);
         cardElement.append(h4WindGust);
-        cardElement.classList.add(`card col-sm-12 col-md-3 col-lg-4 col-xl-4 p-4 mx-1 my-1`)
+        cardElement.setAttribute("class",`card col-sm-12 col-md-3 col-lg-3 col-xl-4 mx-1 my-1`);
         mainSection.append(cardElement);
 
     }  
