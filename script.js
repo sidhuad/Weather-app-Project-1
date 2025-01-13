@@ -96,18 +96,11 @@ function displayWeatherInfo(data){
         
 
 
-<<<<<<< HEAD
-        h1Day.innerHTML = weatherDay[i];        
-        cardElement.append(h1Day);
-
-
-=======
         // displaying week days 
         h1Day.innerHTML = week[newDay];
         cardElement.append(h1Day);
 
         // Max/min temp
->>>>>>> ba1b198a5fbe96a748c449257c20e138d30efcc6
         h4Temp.innerHTML = `Max / Min <br> ${maxTemp[i]} / ${minTemp[i]} &#x2103 `;
         cardElement.append(h4Temp);
 
