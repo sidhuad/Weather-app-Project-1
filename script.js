@@ -88,9 +88,9 @@ function displayWeatherInfo(data){
         const h4WindGust = document.createElement('h4');
 
 
-
-        h1Day.innerHTML = weatherDay[i];
+        h1Day.innerHTML = weatherDay[i];        
         cardElement.append(h1Day);
+
 
         h4Temp.innerHTML = `Max / Min <br> ${maxTemp[i]} / ${minTemp[i]} &#x2103 `;
         cardElement.append(h4Temp);
