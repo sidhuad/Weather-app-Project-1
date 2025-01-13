@@ -34,7 +34,7 @@ weatherForm.addEventListener('submit',event => {
     {
         alert("Please Enter a City.");
     }
-});
+
 
 
 
@@ -100,6 +100,7 @@ function displayWeatherInfo(data){
         cardElement.append(h1Day);
 
         // Max/min temp
+
         h4Temp.innerHTML = `Max / Min <br> ${maxTemp[i]} / ${minTemp[i]} &#x2103 `;
         cardElement.append(h4Temp);
 
