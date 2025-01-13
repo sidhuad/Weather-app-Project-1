@@ -219,6 +219,7 @@ body {
     transition: transform 0.2s linear;
     background-image:url("./assets/night.png");
     background-size: cover;
+}
 .partCloudy
 {
     background-image: url(./assets/partCloudy.png);
