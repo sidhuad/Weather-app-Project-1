@@ -29,11 +29,11 @@ weatherForm.addEventListener('submit',event => {
         .catch(error =>{
             console.error(error);  // Log errors if any
         });
-    }
+        }
     else
     {
         alert("Please Enter a City.");
-    }
+}})
 
 
 
@@ -100,19 +100,11 @@ function displayWeatherInfo(data){
         cardElement.append(h1Day);
 
         // Max/min temp
-<<<<<<< HEAD
-=======
-
->>>>>>> 106140a325124c0c319beb67b44807b0e026abea
         h4Temp.innerHTML = `Max / Min <br> ${maxTemp[i]} / ${minTemp[i]} &#x2103 `;
         cardElement.append(h4Temp);
 
 
-<<<<<<< HEAD
-        if (weatherCode[i].weather_code > 0 && weatherCode[i].weather_code < 4) {
-=======
         if (weatherCode[i] > 0 && weatherCode[i] < 4) {
->>>>>>> 106140a325124c0c319beb67b44807b0e026abea
             h4WeatherCode.innerHTML = "Partly Cloudy";
             // h4WeatherCode.classList.add('partCloudy');
         }
@@ -213,5 +205,4 @@ function displayWeatherInfo(data){
         cardElement.setAttribute("class",`card col-12 col-sm-12 col-md-9 col-lg-3 col-xl-3 col-xxl-3 p-2 mx-1 my-1`);
         mainSection.append(cardElement);
 
-    }
-}
+}};
