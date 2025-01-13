@@ -1,19 +1,11 @@
-const weatherForm = document.querySelector(`form`);
-const cityInput = document.querySelector(`#locationName`);
-const cards = document.querySelector(`.card`);
-const apiKey = "36684b12ddb5a86da4560c99ced6468c";
+const weatherForm = document.querySelector('form');
+const cityInput = document.querySelector('#locationName');
+const card = document.querySelector('.card');
+// const apiKey = "36684b12ddb5a86da4560c99ced6468c";
 
 
-weatherForm.addEventListener('submit',event =>{
+weatherForm.addEventListener('submit',event => {
     event.preventDefault();
-    const city = cityInput.value;
-    if (city){
-
-    }
-    else {
-        displayError('Please Enter a City')};
-});
-
 
     const city = cityInput.value.trim();
     if (city) {
@@ -32,7 +24,7 @@ weatherForm.addEventListener('submit',event =>{
         }) 
         .then(data => {
             // console.log(data);
-            getWeatherData(data); // sending data into the function
+            getWeatherData(data); // sending lat and long coord data into the function for fetching weather data
         })
         .catch(error =>{
             console.error(error);  // Log errors if any
@@ -40,10 +32,10 @@ weatherForm.addEventListener('submit',event =>{
     }
     else
     {
-        alert("Please Enter a City and State");
+        alert("Please Enter a City.");
     }
 
-
+})
 
 
 
@@ -71,29 +63,23 @@ function getWeatherData(coordinates){
 
 function displayWeatherInfo(data){
 
-//     const maxTemp = data.daily.temperature_2m_max;
-//     const minTemp = data.daily.temperature_2m_min;
-//     const windSpeed = data.daily.wind_speed_10m_max;
-//     const windGust = data.daily.wind_gusts_10m_max;
-//     const weatherCode = data.daily.weather_code;
-//     const weatherDay = data.daily.time;
+    const maxTemp = data.daily.temperature_2m_max;
+    const minTemp = data.daily.temperature_2m_min;
+    const windSpeed = data.daily.wind_speed_10m_max;
+    const windGust = data.daily.wind_gusts_10m_max;
+    const weatherCode = data.daily.weather_code;
+    const weatherDay = data.daily.time;
+  
+    const mainSection = document.querySelector('section');
 
-    const windDirection = data.daily.wind_direction_10m_dominant;
+    // making suree
+    mainSection.innerHTML = "";
 
-    console.log(maxTemp); // cel
-    console.log(minTemp);
-    console.log(windSpeed); // kmph at 10 meter from ground
-    console.log(windGust); // kmph at 10 meter from ground
-    console.log(windDirection); // degress
-    console.log(weatherCode);
-    
-    console.log(data.daily);
-    
     const days = ['Sunday','Monday','Tuesday','Wednesday','Thursday','Friday','Saturday'];
 
-    for (let i = 0; i < data.daily.length; i++) {
+
+    for (let i = 0; i < weatherDay.length; i++) {
         
-        const mainSection = document.querySelector('section');
         const cardElement = document.createElement('card');
         const h1Day = document.createElement('h1');
         const h4Temp = document.createElement('h4');
@@ -101,8 +87,13 @@ function displayWeatherInfo(data){
         const h4WindSpeed = document.createElement('h4');
         const h4WindGust = document.createElement('h4');
 
+
+
         h1Day.innerHTML = weatherDay[i];
-        h4Temp.innerHTML = `Max / Min Temperature: ${maxTemp[i]} / ${minTemp[i]} &#x2103 `;
+        cardElement.append(h1Day);
+
+        h4Temp.innerHTML = `Max / Min <br> ${maxTemp[i]} / ${minTemp[i]} &#x2103 `;
+        cardElement.append(h4Temp);
 
 
         if (weatherCode[i] > 0 && weatherCode[i] < 4) {
@@ -145,34 +136,14 @@ function displayWeatherInfo(data){
             h4WeatherCode.innerHTML = "Sunny / Clear Sky";
         }
        
-        h4WindSpeed.innerHTML = `Wind Speed : ${windSpeed[i]} Km/H`;
-        h4WindGust.innerHTML = `Wind Gust : ${windGust[i]} Km/H`;
+        h4WindSpeed.innerHTML = `Wind Speed <br> ${windSpeed[i]} Km/H`;
+        h4WindGust.innerHTML = `Wind Gust <br> ${windGust[i]} Km/H`;
 
-        cardElement.append(h1Day);
-        cardElement.append(h4Temp);
         cardElement.append(h4WeatherCode);
         cardElement.append(h4WindSpeed);
         cardElement.append(h4WindGust);
-        cardElement.classList.add(`card col-sm-12 col-md-3 col-lg-4 col-xl-4 p-4 mx-1 my-1`)
+        cardElement.setAttribute("class",`card col-12 col-sm-12 col-md-9 col-lg-3 col-xl-3 col-xxl-3 p-2 mx-1 my-1`);
         mainSection.append(cardElement);
 
     }  
-}
-
-
-
-
-// function getWeatherEmoji(weatherId){
-
-
-
-function displayError(Message){ 
-    const errorDisplay = document.createElement ('p');
-//     errorDisplay.textContent = message;
-//     errorDisplay.classList.add("errorDisplay");
-//     errorDisplay.textContent = Message;
-
-
-    card.innerHTML = "";
-    card.append(errorDisplay);
 }
