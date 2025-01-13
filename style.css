@@ -94,7 +94,7 @@ section {
 
 .card h1 {
     font-family: 'dune rise', sans-serif; 
-    font-size: 35px;
+    font-size: 24px;
     
 }
 
@@ -121,6 +121,7 @@ section {
     cursor: pointer;
     min-height: 200px;
     margin-bottom: 10rem;
+ 
 }
 .card *
 {
@@ -220,6 +221,7 @@ body {
     transition: transform 0.2s linear;
     background-image:url("./assets/night.png");
     background-size: cover;
+}
 .partCloudy
 {
     background-image: url(./assets/partCloudy.png);
