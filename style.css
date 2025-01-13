@@ -4,13 +4,11 @@ body, h1, form, section {
 }
 
 .header {
-    margin: 20px 320px;
+    /* margin: 20px 320px;
     align-items: center;
-    padding: 20px;
+    padding: 20px; */
     border-radius: 8px;
     border: 2px transparent black;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    background-color: rgba(255, 255, 255, 0.5);
     background-image: url(https://theautarkist.wordpress.com/wp-content/uploads/2021/10/dune-film-ulyces-100.jpg);
     background-position-x: center;
     background-position-y: 870px;
@@ -25,7 +23,6 @@ body, h1, form, section {
 .header h1 {
     font-size: 3rem;
     font-weight: bold;
-    text-align: center;
     color:rgb(255, 255, 255);
     font-family: 'dune rise', sans-serif;
 }
@@ -77,15 +74,23 @@ section {
 } */
 
 .card {
-    /* border: 2px solid black !important;
+    /* border: 2px solid black !important; */
     border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1) !important; */
+    box-shadow: 0 4px 8px grey !important;
+    transform: perspective(1000px) rotateX(10deg) rotateY(10deg);
+    transition: transform 0.3s ease-in-out;
+    
 }
 
-.card col-sm-12 col-12 col-md-6 col-lg-3 col-xl-3 mx-1 my-1 {
+.card:hover {
+    transform: perspective(1000px) rotateX(0deg) rotateY(0deg);
+    /* box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); */
+}
+
+/* .card col-sm-12 col-12 col-md-6 col-lg-3 col-xl-3 mx-1 my-1 {
     border: 1px solid black;
     border-bottom-color: black 2px !important;
-}
+} */
 
 .card h1 {
     font-family: 'dune rise', sans-serif; 
@@ -94,18 +99,27 @@ section {
 
 .footer {
     margin-top: 3rem;
-    padding: 1rem;
+    width: 67%;
+    padding: .5rem;
     text-align: center;
     background-color: #333;
     color: white;
     border-radius: 8px;
-}.card
+    position: fixed;
+    margin: 0 auto;
+    left: 16.5%;
+    bottom: 0;
+}
+
+.card
 {
     /* height: 300px ; */
     text-align: center;
     background: linear-gradient( rgba(73, 174, 241, 0.70),rgb(223, 147, 47));
     border: none;
     cursor: pointer;
+    min-height: 200px;
+    margin-bottom: 10rem;
 }
 .card *
 {
@@ -146,4 +160,63 @@ section {
     .card {
         line-height: 30px;
     }
+}
+
+:root {
+    --background-color: white;
+    --text-color: black;
+}
+
+body {
+    background-color: var(--background-color);
+    color: var(--text-color);
+}
+
+.dark-mode {
+    --background-color: black;
+    --text-color: white;
+}
+
+.toggleCovering
+{
+    height: 34px;
+    width: 61px;
+    border-radius: 20px;
+    content: "";
+    background-color: rgb(110, 193, 241);
+    box-sizing: border-box;
+    margin: 0 auto;
+    position: bottom;
+    top: 100px;
+    box-shadow: 0px 0px 34px 2px  rgb(110, 193, 241);
+}
+.toggleInsideLight
+{
+    content: "";
+    position: relative;
+    height: 24px;
+    width: 24px;
+    background-color: rgba(104, 95, 95, 0.555);
+    border-radius: 50%;
+    top: 5.5px;
+    /* left: 2px; */
+    transform: translate(3px);
+    transition: transform 0.2s linear;
+    background-image:url("./assets/sunnyDay.png");
+    background-size: cover;
+}
+.toggleInsideDark
+{
+    content: "";
+    position: relative;
+    height: 24px;
+    width: 24px;
+    background-color: rgba(16, 2, 104, 0.555);
+    border-radius: 50%;
+    top: 5.5px;
+    /* left: 2px; */
+    transform: translateX(33px);
+    transition: transform 0.2s linear;
+    background-image:url("./assets/night.png");
+    background-size: cover;
 }
