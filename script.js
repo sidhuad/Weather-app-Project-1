@@ -34,7 +34,6 @@ weatherForm.addEventListener('submit',event => {
     {
         alert("Please Enter a City.");
     }
-
 });
 
 
