@@ -219,4 +219,65 @@ body {
     transition: transform 0.2s linear;
     background-image:url("./assets/night.png");
     background-size: cover;
+.partCloudy
+{
+    background-image: url(./assets/partCloudy.png);
+    background-size: 120px;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 200px;
+}
+.snow
+{
+    background-image: url(./assets/snow.png);
+    background-size: 120px;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 200px;
+
+}
+.clearSky
+{
+    background-image: url(./assets/clear_sky.png);
+    background-size: 120px;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 200px;
+
+}
+.fog
+{
+    background-image: url(./assets/fog.png);
+    background-size: 120px;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 200px;
+
+}
+.drizzle
+{
+    background-image: url(./assets/drizzle.png);
+    background-size: 120px;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 200px;
+
+}
+.freezDrizzle
+{
+    background-image: url(./assets/freezing_drizzle.png);
+    background-size: 120px;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 200px;
+
+}
+.rain
+{
+    background-image: url(./assets/rain.png);
+    background-size: 120px;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 200px;
+
 }
