@@ -4,10 +4,18 @@ body, h1, form, section {
 }
 
 .header {
+    margin: 20px 320px;
+    align-items: center;
+    padding: 20px;
     border-radius: 8px;
+    border: 2px transparent black;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    color:#f4f4f9;
-    background-image: url(Sunny\ clouds\ background.png)!important;
+    background-color: rgba(255, 255, 255, 0.5);
+    background-image: url(https://theautarkist.wordpress.com/wp-content/uploads/2021/10/dune-film-ulyces-100.jpg);
+    background-position-x: center;
+    background-position-y: 870px;
+    /* color:#f4f4f9;
+    background-image: url(Sunny\ clouds\ background.png)!important; */
 }
 
 /* .header.container.my-5.p-5.bg-dark.text-white {
@@ -18,7 +26,7 @@ body, h1, form, section {
     font-size: 3rem;
     font-weight: bold;
     text-align: center;
-    color:rgb(0, 0, 0);
+    color:rgb(255, 255, 255);
     font-family: 'dune rise', sans-serif;
 }
 
@@ -28,8 +36,13 @@ body, h1, form, section {
 
 body {
     font-family: Arial, sans-serif;
-    background-color: #F4486F;
-    color: #ffffff;
+    background-image: url(https://images.surfacemag.com/app/uploads/2021/10/26180457/dune-2021-remake-02.jpg);
+    background-size: cover;
+    background-repeat: no-repeat; 
+    background-position: center;
+    min-height: 100vh;
+    /* width: 100vw; */
+    color: #d49962;
 }
 
 
@@ -64,13 +77,19 @@ section {
 } */
 
 .card {
-    border: 2px solid black !important;
-    /* border-radius: 8px;
+    /* border: 2px solid black !important;
+    border-radius: 8px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1) !important; */
 }
 
 .card col-sm-12 col-12 col-md-6 col-lg-3 col-xl-3 mx-1 my-1 {
     border: 1px solid black;
+    border-bottom-color: black 2px !important;
+}
+
+.card h1 {
+    font-family: 'dune rise', sans-serif; 
+    
 }
 
 .footer {
@@ -98,3 +117,33 @@ section {
    font-weight: bold;
    color: red;
 } */
+
+@media (max-width: 768px) {
+    .header {
+        width: 95%; /* Adjust width for tablets */
+        margin: 10px auto;
+    }
+
+    .footer {
+        padding: 0.5rem;
+    }
+
+    .card {
+        line-height: 40px;
+    }
+}
+
+@media (max-width: 480px) {
+    .header {
+        width: 100%; /* Adjust width for phones */
+        margin: 5px auto;
+    }
+
+    .footer {
+        padding: 0.5rem;
+    }
+
+    .card {
+        line-height: 30px;
+    }
+}
