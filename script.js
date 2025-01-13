@@ -35,7 +35,6 @@ weatherForm.addEventListener('submit',event => {
         alert("Please Enter a City.");
     }
 
-})
 
 
 
@@ -101,11 +100,19 @@ function displayWeatherInfo(data){
         cardElement.append(h1Day);
 
         // Max/min temp
+<<<<<<< HEAD
+=======
+
+>>>>>>> 106140a325124c0c319beb67b44807b0e026abea
         h4Temp.innerHTML = `Max / Min <br> ${maxTemp[i]} / ${minTemp[i]} &#x2103 `;
         cardElement.append(h4Temp);
 
 
+<<<<<<< HEAD
         if (weatherCode[i].weather_code > 0 && weatherCode[i].weather_code < 4) {
+=======
+        if (weatherCode[i] > 0 && weatherCode[i] < 4) {
+>>>>>>> 106140a325124c0c319beb67b44807b0e026abea
             h4WeatherCode.innerHTML = "Partly Cloudy";
             // h4WeatherCode.classList.add('partCloudy');
         }
