@@ -206,5 +206,38 @@ function displayWeatherInfo(data){
         cardElement.setAttribute("class",`card col-12 col-sm-12 col-md-9 col-lg-3 col-xl-3 col-xxl-3 p-2 mx-1 my-1`);
         mainSection.append(cardElement);
 
-    }
+    } 
 }
+
+const btnCovering = document.getElementsByClassName('toggleCovering');
+const btnInside = document.getElementById('lightDarkBtn');
+const body = document.body;
+
+
+let mode = "light";
+
+
+const lightDark = () =>
+{
+    if(mode == "light")
+        {
+            btnInside.setAttribute('class','toggleInsideDark');
+            body.style.backgroundImage = "url('./assets/blackhole.jpg')";
+            mode = "dark";
+            return mode;
+        }
+        if(mode == "dark")
+        {
+            btnInside.setAttribute("class",'toggleInsideLight');
+            body.style.backgroundImage = "url(https://images.surfacemag.com/app/uploads/2021/10/26180457/dune-2021-remake-02.jpg)";
+            mode = "light";
+            return mode;
+        }
+}
+
+const toggleMode = () =>
+{
+    btnInside.addEventListener('click', lightDark)    
+}
+
+toggleMode();
