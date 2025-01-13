@@ -72,11 +72,10 @@ function displayWeatherInfo(data){
   
     const mainSection = document.querySelector('section');
 
-    // making suree
+    // making sure inner html is empty so it does not append on itself
     mainSection.innerHTML = "";
 
-    const days = ['Sunday','Monday','Tuesday','Wednesday','Thursday','Friday','Saturday'];
-
+   
 
     for (let i = 0; i < weatherDay.length; i++) {
         
@@ -87,54 +86,79 @@ function displayWeatherInfo(data){
         const h4WindSpeed = document.createElement('h4');
         const h4WindGust = document.createElement('h4');
 
+        const week = ['Monday','Tuesday','Wednesday','Thursday','Friday','Saturday','Sunday'];
+
+        const stringWeatherDay = weatherDay[i].toString();
+        const date =  new Date(stringWeatherDay);
+        const newDay = date.getDay(); // returns 0,1,2,3
+        console.log(week[newDay]);
+        
 
 
-        h1Day.innerHTML = weatherDay[i];
+        h1Day.innerHTML = week[newDay];
         cardElement.append(h1Day);
 
         h4Temp.innerHTML = `Max / Min <br> ${maxTemp[i]} / ${minTemp[i]} &#x2103 `;
         cardElement.append(h4Temp);
 
 
-        if (weatherCode[i] > 0 && weatherCode[i] < 4) {
-            h4WeatherCode.innerHTML = "Mainly clear/Partly Cloudy";
-        }
-        if (weatherCode[i] > 44 && weatherCode[i] < 49) {
-            h4WeatherCode.innerHTML = "Fog";
-        }
-        if (weatherCode[i] > 50 && weatherCode[i] < 56) {
-            h4WeatherCode.innerHTML = "Drizzle";
-        }
-        if (weatherCode[i] > 57 && weatherCode[i] < 58) {
-            h4WeatherCode.innerHTML = "Frezzing Drizzle";
-        }
-        if (weatherCode[i] > 60 && weatherCode[i] < 66) {
-            h4WeatherCode.innerHTML = "Rain";
-        }
-        if (weatherCode[i] > 65 && weatherCode[i] < 68) {
-            h4WeatherCode.innerHTML = "Freezing Rain";
-        }
-        if (weatherCode[i] > 70 && weatherCode[i] < 76) {
-            h4WeatherCode.innerHTML = "Snow Fall";
-        }
-        if (weatherCode[i] == 77) {
-            h4WeatherCode.innerHTML = "Snow Grains";
-        }
-        if (weatherCode[i] > 79 && weatherCode[i] < 83) {
-            h4WeatherCode.innerHTML = "Rain Showers";
-        }
-        if (weatherCode[i] > 84 && weatherCode[i] < 87) {
-            h4WeatherCode.innerHTML = "Heavy Snow Showers";
-        }
-        if (weatherCode[i] == 95) {
-            h4WeatherCode.innerHTML = "Thunderstorm";
-        }
-        if (weatherCode[i] > 95 && weatherCode[i] < 100) {
-            h4WeatherCode.innerHTML = "Thunderstorm with Heavy hail";
-        }
-        if (weatherCode[i] == 0) {
-            h4WeatherCode.innerHTML = "Sunny / Clear Sky";
-        }
+        if (weatherCode.weather_code > 0 && weatherCode.weather_code < 4) {
+        h4WeatherCode.classList.add('partCloudy');
+    }
+    if (weatherCode.weather_code > 44 && weatherCode.weather_code < 49) {
+        // h4WeatherCode.innerHTML = "Fog";
+        h4WeatherCode.classList.add('fog');
+
+    }
+    if (weatherCode.weather_code > 50 && weatherCode.weather_code < 56) {
+        // h4WeatherCode.innerHTML = "Drizzle";
+        h4WeatherCode.classList.add('drizzle');
+
+    }
+    if (weatherCode.weather_code > 57 && weatherCode.weather_code < 58) {
+        // h4WeatherCode.innerHTML = "Frezzing Drizzle";
+        h4WeatherCode.classList.add('freezDrizzle');
+
+    }
+    if (weatherCode.weather_code > 60 && weatherCode.weather_code < 66) {
+        // h4WeatherCode.innerHTML = "Rain";
+        h4WeatherCode.classList.add('rain');
+
+    }
+    if (weatherCode.weather_code > 65 && weatherCode.weather_code < 68) {
+        h4WeatherCode.innerHTML = "Freezing Rain";
+        // h4WeatherCode.classList.add('fog');
+
+    }
+    if (weatherCode.weather_code > 70 && weatherCode.weather_code < 76) {
+        // h4WeatherCode.innerHTML = "Snow Fall";
+        h4WeatherCode.classList.add('snow');
+
+    }
+    if (weatherCode.weather_code == 77) {
+        h4WeatherCode.innerHTML = "Snow Grains";
+    }
+    if (weatherCode.weather_code > 79 && weatherCode.weather_code < 83) {
+        // h4WeatherCode.innerHTML = "Rain Showers";
+        h4WeatherCode.classList.add('rain');
+
+    }
+    if (weatherCode.weather_code > 84 && weatherCode.weather_code < 87) {
+        // h4WeatherCode.innerHTML = "Heavy Snow Showers";
+        h4WeatherCode.classList.add('snow');
+
+    }
+    if (weatherCode.weather_code == 95) {
+        h4WeatherCode.innerHTML = "Thunderstorm";
+    }
+    if (weatherCode.weather_code > 95 && weatherCode.weather_code < 100) {
+        h4WeatherCode.innerHTML = "Thunderstorm with Heavy hail";
+    }
+    if (weatherCode.weather_code == 0) {
+        // h4WeatherCode.innerHTML = "Sunny / Clear Sky";
+        h4WeatherCode.classList.add('clearSky');
+
+    }
        
         h4WindSpeed.innerHTML = `Wind Speed <br> ${windSpeed[i]} Km/H`;
         h4WindGust.innerHTML = `Wind Gust <br> ${windGust[i]} Km/H`;
@@ -145,5 +169,5 @@ function displayWeatherInfo(data){
         cardElement.setAttribute("class",`card col-12 col-sm-12 col-md-9 col-lg-3 col-xl-3 col-xxl-3 p-2 mx-1 my-1`);
         mainSection.append(cardElement);
 
-    }  
+    }
 }
