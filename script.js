@@ -37,6 +37,7 @@ weatherForm.addEventListener('submit',event => {
 
 
 
+});
 
 function getWeatherData(coordinates){
     const data = coordinates;
