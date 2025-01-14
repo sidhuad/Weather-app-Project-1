@@ -166,7 +166,7 @@ function displayWeatherInfo(data) {
         // windSpeed and wind gust
         h4WindSpeed.innerHTML = `Wind Speed / Gusts <br> ${windSpeed[i]} / ${windGust[i]} Km/H`;
 
-        if (windDirectDeg[i] == 0 || windDirectDeg == 360) {
+        if (windDirectDeg[i] == 0 || windDirectDeg[i] == 360) {
             windDirect.innerHTML = `&#8689; N`;
         }
         if (windDirectDeg[i] == 90) {
