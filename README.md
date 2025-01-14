@@ -1,7 +1,7 @@
 # Weather-app-Project-1
 project 1 user submitted weather display app 
 
-* As a user, I want to see a user submitted based web application displaying weather, user submitted photos and images.
+* As a user, I want to see a user submitted based web application displaying accurate weather using the submitted photos and images.
 
 ## Acceptance Criteria
 
@@ -31,6 +31,7 @@ project 1 user submitted weather display app
 * technologies used: HTML, CSS, JS, Bootstrap, Web APIs
 
 ## GitHub Deployment
+* (https://pecdao.github.io/Weather-app-Project-1/)
 
 ## Link Refrences 
 
