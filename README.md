@@ -33,7 +33,7 @@ project 1 user submitted weather display app
 * technologies used: HTML, CSS, JS, Bootstrap, Web APIs
 
 ## GitHub Deployment
-* (https://pecdao.github.io/Weather-app-Project-1/)
+* (https://sidhuad.github.io/Weather-app-Project-1/)
 
 ## Link Refrences 
 
