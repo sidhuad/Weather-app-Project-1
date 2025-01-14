@@ -94,6 +94,7 @@ section {
 
 .card h1 {
     font-family: 'dune rise', sans-serif; 
+    font-size: 24px;
     
 }
 
@@ -105,7 +106,7 @@ section {
     background-color: #333;
     color: white;
     border-radius: 8px;
-    position: fixed;
+    /* position: fixed; */
     margin: 0 auto;
     left: 16.5%;
     bottom: 0;
@@ -120,6 +121,7 @@ section {
     cursor: pointer;
     min-height: 200px;
     margin-bottom: 10rem;
+ 
 }
 .card *
 {
