@@ -28,6 +28,8 @@ project 1 user submitted weather display app
 
 ## Assets
 
+![Alt text](./assets/WeatherApp.png)
+
 * technologies used: HTML, CSS, JS, Bootstrap, Web APIs
 
 ## GitHub Deployment
